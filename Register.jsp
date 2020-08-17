@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="home.jsp">
+<form method="post" action="login.jsp">
 <h1>New Registration</h1>
 		<table>
 			
