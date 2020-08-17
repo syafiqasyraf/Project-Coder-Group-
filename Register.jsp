@@ -7,41 +7,54 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="login.jsp">
-<h1>New Registration</h1>
-		<table>
-			
-			<tr>
-				<td>User Name</td>
-				<td><input type="text" name="uname"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="text" name="password"></td>
-			</tr>
-			<tr>
-				<td>Confirm Password</td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td>Address</td>
-				<td><input type="text" name="address"></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td><input type="text" name="email"></td>
-			</tr>
-			<tr>
-				<td>Phone No</td>
-				<td><input type="text" name="hpno"></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Register" ></td>
-			</tr>
-		
-		</table>
 
-	</form>
+<h2>Submitted User Information</h2>
+      <table>
+         <tr>
+            <td>Username</td>
+            <td>${username}</td>
+         </tr>
+         <tr>
+            <td>Password</td>
+            <td>${password}</td>
+         </tr>    
+         <tr>
+            <td>Address</td>
+            <td>${address}</td>
+         </tr>  
+         <tr>
+            <td>Subscribed to Newsletter</td>
+            <td>${receivePaper}</td>
+         </tr>    
+         <tr>
+            <td>Favorite Web Frameworks</td>
+            <td> <% String[] favoriteFrameworks = (String[])request.getAttribute("favoriteFrameworks");
+               for(String framework: favoriteFrameworks) {
+                  out.println(framework);
+               }
+            %></td>
+         </tr>     	 
+         <tr>
+            <td>Gender</td>
+            <td>${(gender=="M"? "Male" : "Female")}</td>
+         </tr>
+         <tr>
+            <td>Favourite Number</td>
+            <td>${favoriteNumber}</td>
+         </tr>   
+         <tr>
+            <td>Country</td>
+            <td>${country}</td>
+         </tr>
+         <tr>
+            <td>Skills</td>
+            <td> <% String[] skills = (String[])request.getAttribute("skills");
+            for(String skill: skills) {
+               out.println(skill);
+            }
+            %></td>
+         </tr>   	  
+      </table>  
 
 </body>
 </html>
